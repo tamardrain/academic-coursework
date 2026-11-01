@@ -1,0 +1,22 @@
+<div class="article-card">
+
+  <h3>{{ article().title }}</h3>
+
+  <p>{{ article().body }}</p>
+
+  <div class="status"
+       [class.read]="article().isPublished"
+       [class.unread]="!article().isPublished">
+
+    {{ article().isPublished ? '✔ נקרא' : '⏳ לא נקרא' }}
+
+  </div>
+
+  <button class="btn"
+          (click)="articlesService.updateStatus(article().id)">
+
+    {{ article().isPublished ? 'בטל סימון' : 'סמן כנקרא' }}
+
+  </button>
+
+</div>

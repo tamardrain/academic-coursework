@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+/* נותן מקום ל-header קבוע */
+.app-container {
+  padding-top: 80px; /* גובה header + מרווח */
+  min-height: 100vh;
+  background: #f6f9fc;
+  box-sizing: border-box;
+}

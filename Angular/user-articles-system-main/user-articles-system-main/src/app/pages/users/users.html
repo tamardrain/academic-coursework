@@ -1,0 +1,25 @@
+<div class="users-page">
+
+    <h2>All Users:</h2>
+
+    @if(loading()){
+        <div class="status-message loading-message">
+            ⏳ Loading users...
+        </div>
+    }
+
+    @else if(error()){
+        <div class="status-message error-message">
+            ⚠ Failed to load users
+        </div>
+    }
+
+    @else {
+
+        @for(user of users; track user.id){
+            <app-user [currentUser]="user"></app-user>
+        }
+
+    }
+
+</div>

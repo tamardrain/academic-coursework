@@ -1,0 +1,49 @@
+<div class="profile-page">
+
+  <div class="user-card">
+
+    <div class="top-section">
+
+      <div class="avatar">
+        {{ selectedUser()?.name?.charAt(0) }}
+      </div>
+
+      <h1>{{ selectedUser()?.name }}</h1>
+
+      <p class="email">
+        {{ selectedUser()?.email }}
+      </p>
+
+    </div>
+
+    <div class="info-section">
+
+      <div class="info-box">
+
+      <span class="status"
+      [class.completed]="isEligible()"
+      [class.not-completed]="!isEligible()">
+
+  {{
+    isEligible()
+      ? 'כשיר לקורס'
+      : 'לא כשיר לקורס'
+  }}
+
+</span>
+
+      </div>
+
+    </div>
+
+    <button class="articles-btn" (click)="goToUserArticles()">
+      למעבר למאמרים
+    </button>
+
+  </div>
+
+  <button class="back-btn" (click)="goBackToUsers()">
+    ⬅ חזרה לכל המשתמשים
+  </button>
+
+</div>

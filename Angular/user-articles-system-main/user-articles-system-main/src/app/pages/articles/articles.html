@@ -1,0 +1,24 @@
+<div class="articles-page">
+
+  <h2>📚 כל המאמרים:</h2>
+
+  <!-- אינדיקציה כללית -->
+  <div class="status-badge"
+       [class.completed]="readAllArticles()">
+
+    {{ readAllArticles()
+        ? '🎉 המשתמש השלים את כל המאמרים'
+        : '📖 המשתמש עדיין לא השלים את כל המאמרים' }}
+
+  </div>
+
+  @for(_article of articles(); track _article.id) {
+
+    <app-article [article]="_article"></app-article>
+
+  }
+  <button class="back-btn" (click)="goBackToUser()">
+  ⬅ חזרה לפרופיל המשתמש
+</button>
+
+</div>
