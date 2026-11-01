@@ -1,0 +1,120 @@
+/* ===== MODAL BACKDROP ===== */
+:host {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* ===== FORM CARD ===== */
+form {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  width: 450px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== LABELS (יותר גדולים וברורים) ===== */
+label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: 0.2s;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* ===== FIELDS SPACING ===== */
+.form-group,
+p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ===== ERROR TEXT ===== */
+.error,
+span {
+  color: #ef4444;
+  font-size: 12px;
+}
+
+/* ===== CHECKBOXES ===== */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.cancel {
+  background: #e5e7eb;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background: #d1d5db;
+}
+
+.submit-btn,
+.create {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-btn:hover,
+.create:hover {
+  background: #3730a3;
+}
+input.ng-invalid.ng-touched.ng-dirty,
+textarea.ng-invalid.ng-touched.ng-dirty {
+  border: 2px solid red;
+}

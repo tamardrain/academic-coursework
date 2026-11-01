@@ -1,0 +1,43 @@
+<app-my-header></app-my-header>
+
+<main class="layout">
+
+  <aside class="users-panel">
+    <ul>
+      @for(user of userslist; track user.id){
+        <li>
+          <app-user
+            (selectedname)="onselectedid($event)"
+            [user]="user"
+            [isSelected]="user.id === selectedUsername()?.id">
+          </app-user>
+        </li>
+      }
+    </ul>
+
+    <button class="add-user-btn" (click)="addUserClicked()">
+      + Add User
+    </button>
+  </aside>
+
+  <section class="tasks-panel">
+
+    @if(selectedUsername()!==null){
+      <app-tasks
+        [username]="selectedUsername()!.name"
+        [userid]="selectedUsername()!.id">
+      </app-tasks>
+    } @else {
+      <p class="empty">Please choose user</p>
+    }
+
+  </section>
+
+</main>
+
+@if(isaddUserClick()){
+  <app-add-new-user
+    (addNewUser)="onAddNewUser($event)"
+    (closeDialog)="onCloseDialog()">
+  </app-add-new-user>
+}

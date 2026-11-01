@@ -1,0 +1,25 @@
+.tasks-list {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.tasks-list h1 {
+  margin-bottom: 10px;
+}
+
+.tasks-list button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tasks-list button:hover {
+  background: #059669;
+}

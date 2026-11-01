@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  padding: 24px 36px;
+  background: #ffffff;
+  color: #111827;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* LOGO גדול יותר */
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.text {
+  margin-left: 20px;
+}
+
+.text h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.text h2 {
+  margin: 8px 0 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+/* HR */
+hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 10px 0;
+  width: 260px;
+}

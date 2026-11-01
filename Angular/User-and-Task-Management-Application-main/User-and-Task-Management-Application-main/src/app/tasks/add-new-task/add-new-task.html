@@ -1,0 +1,33 @@
+<form #addTaskForm="ngForm" (ngSubmit)="onSubmit(addTaskForm)" id="task-form">
+  <p>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title"  [(ngModel)]="title" required maxlength="18" #formTitle="ngModel"/>
+  @if (formTitle.invalid && formTitle.touched) 
+  {
+    <span>Invalid title</span>
+  }
+</p>
+
+  <p>
+    <label for="summary">Summary</label>
+    <textarea id="summary" name="summary" rows="4"  [(ngModel)]="summary" maxlength="50" #formSummary="ngModel"></textarea>
+   @if (formSummary.invalid && formSummary.touched) 
+  {
+    <span>Invalid summary</span>
+  }
+</p>
+
+  <p>
+    <label for="due-date">Due Date</label>
+    <input type="date" id="due-date" name="dueDate"  [(ngModel)]="dueDate" required #formDueDate="ngModel"/>
+   @if (formDueDate.invalid && formDueDate.touched) 
+  {
+    <span>Invalid dueDate</span>
+  }
+</p>
+
+  <p class="actions">
+    <button type="button" class="cancel" (click)="clodeDialogClicked()" >Cancel</button>
+    <button type="submit" class="create" [disabled]="addTaskForm.invalid">Create</button>
+  </p>
+</form>

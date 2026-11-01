@@ -1,0 +1,51 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f8fc;
+}
+
+/* צד יוזרים */
+.users-panel {
+  width: 280px;
+  padding: 20px;
+  border-right: 2px solid #e6e6e6;
+  background: #fff;
+}
+
+.users-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* כפתור הוספת משתמש */
+.add-user-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-user-btn:hover {
+  background: #3730a3;
+}
+
+/* צד משימות */
+.tasks-panel {
+  flex: 1;
+  padding: 30px;
+}
+
+.empty {
+  font-size: 18px;
+  color: #888;
+}

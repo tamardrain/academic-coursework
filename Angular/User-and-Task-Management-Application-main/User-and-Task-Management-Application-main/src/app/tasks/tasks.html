@@ -1,0 +1,18 @@
+<div class="tasks-list">
+<h1>{{username()}}'s tasks</h1>
+<button (click)="onClickAddTask()">add task</button>
+<ul>
+    @for(task of usertasks(); track task.id){
+        <li>
+            <app-task
+  [task]="task"
+  (taskCompleted)="onClickCmpletedTask($event)" >
+</app-task>
+        </li>
+    }
+</ul>
+</div>
+@if (isButtonClicked()) 
+{
+<app-add-new-task (clodeDialog)="onClickCancal()" (addNewTask)="onAddNewTask($event)"></app-add-new-task>
+}

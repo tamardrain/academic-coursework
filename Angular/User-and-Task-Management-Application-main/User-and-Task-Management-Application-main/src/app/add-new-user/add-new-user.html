@@ -1,0 +1,67 @@
+<div class="backdrop" (click)="closeDialogClicked()">
+<form class="modal-form" [formGroup]="addFormUser" (ngSubmit)="onSubmit()" (click)="$event.stopPropagation()">
+    <div formGroupName="name">
+        <div class="form-group">
+            <label for="firstName">FirstName</label>
+            <input type="text" id="firstName" formControlName="first">
+            @if (first?.hasError('required') && first?.touched) {
+            <div class="error">First name is required</div>
+            }
+            @if (first?.hasError('maxlength')) {
+            <div class="error">Maximum 18 characters allowed</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">LastName</label>
+            <input type="text" id="lastName" formControlName="last">
+            @if (last?.hasError('required') && last?.touched) {
+            <div class="error">Last name is required</div>
+            }
+
+            @if (last?.hasError('maxlength')) {
+            <div class="error">Maximum 18 characters allowed</div>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email">
+        @if (email?.hasError('required') && email?.touched) {
+        <div class="error">Email is required</div>
+        }
+
+        @if (email?.hasError('email') && email?.touched) {
+        <div class="error">Invalid email format</div>
+        }
+    </div>
+
+    <div formGroupName="password">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="pass">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">ConfirmPassword</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPass">
+        </div>
+        @if(addFormUser.get('password')?.hasError('mismatch')
+        && addFormUser.get('password')?.touched){
+        <p class="error">Passwords do not match</p>
+        }
+    </div>
+    <div formArrayName="categories">
+        @for(cat of categories ; track $index){
+        <label>
+            <input type="checkbox" [formControlName]="$index" />
+            {{cat}}
+        </label>
+        }
+    </div>
+    <button type="button" class="cancel" (click)="closeDialogClicked()">Cancel</button>
+    <button type="submit" class="submit-btn">Create</button>
+    
+</form>
+</div>
